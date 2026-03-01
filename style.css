@@ -8,7 +8,8 @@
 
 body {
     background-color: #f9f9f9;
-    color: #4a4a4a; /* Dark grey for text */
+    color: #4a4a4a;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -46,7 +47,6 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    /* Placeholder background image of architecture */
     background: linear-gradient(rgba(122, 122, 122, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1541888081622-4a7b97368ce4?q=80&w=2000&auto=format&fit=crop') center/cover;
     display: flex;
     align-items: center;
@@ -81,7 +81,7 @@ nav {
 }
 
 .btn-primary {
-    background-color: #d4af37; /* Stoneline Gold */
+    background-color: #d4af37;
     color: #ffffff;
 }
 
@@ -99,12 +99,7 @@ nav {
     color: #333333;
 }
 
-/* Features Section */
-.features {
-    padding: 100px 10%;
-    background-color: #ffffff;
-}
-
+/* Shared Section Headers */
 .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -112,8 +107,14 @@ nav {
 
 .section-header h2 {
     font-size: 2.5rem;
-    color: #7a7a7a; /* Stoneline Grey */
+    color: #7a7a7a;
     margin-bottom: 15px;
+}
+
+/* Features Section */
+.features {
+    padding: 100px 10%;
+    background-color: #ffffff;
 }
 
 .features-grid {
@@ -125,7 +126,7 @@ nav {
 .feature-card {
     padding: 30px;
     background-color: #f9f9f9;
-    border-top: 4px solid #d4af37; /* Gold accent */
+    border-top: 4px solid #d4af37;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
@@ -140,4 +141,194 @@ nav {
     font-size: 0.95rem;
     line-height: 1.6;
     color: #666666;
+}
+
+/* Products Section (Vertical Cards) */
+.products {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+}
+
+.product-cards-container {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+    justify-content: center;
+}
+
+.product-card {
+    flex: 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.4s ease;
+}
+
+.product-card:hover {
+    flex: 1.2;
+}
+
+.card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+/* About Banner */
+.about-banner {
+    padding: 120px 10%;
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.banner-content h3 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: #4a4a4a;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 10%;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    max-width: 800px;
+    gap: 30px;
+}
+
+.testimonial-image {
+    width: 150px;
+    height: 150px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    flex-shrink: 0;
+    /* Placeholder for contractor face/project */
+    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f35aa9e?q=80&w=300&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.testimonial-text p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.testimonial-text h4 {
+    color: #d4af37;
+    font-size: 1rem;
+}
+
+/* Footer & Contact */
+.footer {
+    background-color: #333333;
+    color: white;
+}
+
+.footer-content {
+    padding: 100px 10%;
+    text-align: center;
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.footer-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-content p {
+    color: #b0b0b0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.footer-logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #d4af37;
+}
+
+.footer-contact-info {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Hides menu on very small screens for now */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .product-cards-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .product-card {
+        height: 300px;
+    }
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .footer-contact-info {
+        text-align: center;
+    }
 }
