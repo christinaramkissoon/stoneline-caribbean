@@ -78,6 +78,9 @@ nav {
     margin-right: 15px;
     display: inline-block;
     transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .btn-primary {
@@ -92,6 +95,7 @@ nav {
 .btn-secondary {
     border: 2px solid #ffffff;
     color: #ffffff;
+    background: transparent;
 }
 
 .btn-secondary:hover {
@@ -143,7 +147,7 @@ nav {
     color: #666666;
 }
 
-/* Products Section (Vertical Cards) */
+/* Products Section (Updated to 2 Cards) */
 .products {
     padding: 100px 10%;
     background-color: #f9f9f9;
@@ -151,9 +155,11 @@ nav {
 
 .product-cards-container {
     display: flex;
-    gap: 20px;
-    height: 500px;
+    gap: 30px;
+    height: 400px;
     justify-content: center;
+    max-width: 1000px; /* Keeps the 2 cards looking balanced */
+    margin: 0 auto;
 }
 
 .product-card {
@@ -166,7 +172,7 @@ nav {
 }
 
 .product-card:hover {
-    flex: 1.2;
+    flex: 1.1; /* Slightly softer expansion for larger cards */
 }
 
 .card-bg {
@@ -192,14 +198,15 @@ nav {
 }
 
 .card-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
 .card-content p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #e0e0e0;
+    line-height: 1.4;
 }
 
 /* About Banner */
@@ -246,7 +253,6 @@ nav {
     background-color: #eaeaea;
     border-radius: 50%;
     flex-shrink: 0;
-    /* Placeholder for contractor face/project */
     background-image: url('https://images.unsplash.com/photo-1504307651254-35680f35aa9e?q=80&w=300&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
@@ -264,32 +270,124 @@ nav {
     font-size: 1rem;
 }
 
-/* Footer & Contact */
-.footer {
+/* NEW Contact Section & Form */
+.contact-section {
+    padding: 100px 10%;
     background-color: #333333;
     color: white;
 }
 
-.footer-content {
-    padding: 100px 10%;
-    text-align: center;
-    border-bottom: 1px solid #4a4a4a;
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
 }
 
-.footer-content h2 {
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    color: white;
 }
 
-.footer-content p {
+.contact-info > p {
     color: #b0b0b0;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-details i {
+    color: #d4af37;
+    font-size: 1.3rem;
+}
+
+.connect-text {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.smart-links {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+    transform: translateY(-5px);
+}
+
+.email-btn {
+    background-color: #d4af37;
+}
+
+.wa-btn {
+    background-color: #25D366; /* Official WhatsApp Green */
+}
+
+.contact-form-wrapper {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* Footer Bottom Strip */
 .footer-bottom {
+    background-color: #222222;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .footer-logo {
@@ -298,16 +396,35 @@ nav {
     color: #d4af37;
 }
 
-.footer-contact-info {
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #b0b0b0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #d4af37;
+}
+
+.footer-contact-info-bottom {
     text-align: right;
     font-size: 0.9rem;
     color: #b0b0b0;
 }
 
+.footer-contact-info-bottom p {
+    margin-bottom: 8px;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
     .nav-links {
-        display: none; /* Hides menu on very small screens for now */
+        display: none;
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -323,12 +440,15 @@ nav {
         flex-direction: column;
         text-align: center;
     }
+    .contact-container {
+        flex-direction: column;
+    }
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    .footer-contact-info {
+    .footer-contact-info-bottom {
         text-align: center;
     }
 }
