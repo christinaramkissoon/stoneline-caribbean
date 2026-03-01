@@ -132,10 +132,10 @@
             </div>
 
             <div class="contact-form-wrapper" data-aos="fade-left">
-                <form action="mailto:sales@stonelinecaribbean.com" method="GET" enctype="text/plain" class="contact-form">
-                    <input type="email" name="Email" placeholder="Your Email Address" required>
-                    <input type="tel" name="Phone" placeholder="Your Phone Number" required>
-                    <textarea name="Message" rows="5" placeholder="How can we help you?" required></textarea>
+                <form onsubmit="sendSmartEmail(event)" class="contact-form">
+                    <input type="email" id="formEmail" placeholder="Your Email Address" required>
+                    <input type="tel" id="formPhone" placeholder="Your Phone Number" required>
+                    <textarea id="formMessage" rows="5" placeholder="How can we help you?" required></textarea>
                     <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
                 </form>
             </div>
@@ -152,6 +152,7 @@
             </div>
         </div>
         <div class="footer-contact-info-bottom">
+            <p>Exclusive Distributors of PPG Stucco</p>
             <p>&copy; 2026 Stoneline Caribbean</p>
         </div>
     </footer>
@@ -165,10 +166,28 @@
     <script>
         AOS.init({ once: true });
 
+        // Modal Logic
         const modal = document.getElementById("factsheetModal");
         function openFactsheet() { modal.style.display = "flex"; }
         function closeFactsheet() { modal.style.display = "none"; }
         window.onclick = function(event) { if (event.target == modal) { closeFactsheet(); } }
+
+        // Smart Form Logic
+        function sendSmartEmail(event) {
+            event.preventDefault(); // Stops the page from refreshing
+            
+            // Get what the user typed
+            const email = document.getElementById('formEmail').value;
+            const phone = document.getElementById('formPhone').value;
+            const message = document.getElementById('formMessage').value;
+            
+            // Format it for the email app
+            const subject = encodeURIComponent("Website Inquiry from " + email);
+            const body = encodeURIComponent("Phone Number: " + phone + "\n\nMessage:\n" + message);
+            
+            // Open the user's email client with everything filled in
+            window.location.href = "mailto:sales@stonelinecaribbean.com?subject=" + subject + "&body=" + body;
+        }
     </script>
 </body>
 </html>
