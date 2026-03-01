@@ -29,8 +29,14 @@ nav {
 }
 
 .nav-logo {
-    height: 60px; 
+    height: 85px; /* Increased Size */
     width: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.25)); /* 3D Shadow Effect */
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05); /* Slight pop out on hover */
 }
 
 .logo-text {
@@ -62,7 +68,7 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(122, 122, 122, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1541888081622-4a7b97368ce4?q=80&w=2000&auto=format&fit=crop') center/cover;
+    background: linear-gradient(rgba(122, 122, 122, 0.7), rgba(0, 0, 0, 0.8)), url('hero.png') center/cover;
     display: flex;
     align-items: center;
     padding: 0 10%;
