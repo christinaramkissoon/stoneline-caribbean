@@ -12,10 +12,14 @@
 <body>
 
     <nav>
-        <div class="logo-text">STONELINE CARIBBEAN</div>
+        <div class="logo-container">
+            <img src="logo.png" alt="Stoneline Caribbean" class="nav-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="logo-text" style="display:none;">STONELINE</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#about">The Advantage</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#advantage">The Advantage</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -30,10 +34,25 @@
         </div>
     </header>
 
-    <section class="features" id="about">
+    <section class="about-us" id="about-us">
+        <div class="about-container">
+            <div class="about-text" data-aos="fade-right">
+                <h2>WHO ARE WE?</h2>
+                <p>StoneLine Caribbean was founded on the principle of ethical and moral distribution, where customer satisfaction and lasting quality meet a price no one can match.</p>
+                <p>Born in Trinidad and proudly connected across the Caribbean, we stand as the exclusive distributor of PPG Stucco, expanding soon into a wider range of trusted construction materials.</p>
+                <p>Our promise is simple: we don't just deliver products, we deliver confidence. From coastline to concrete, we cover it all.</p>
+                <p class="signature">StoneLine Caribbean<br>Your trusted partners in the construction process.</p>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1541888081622-4a7b97368ce4?q=80&w=800&auto=format&fit=crop" alt="Caribbean Construction">
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="advantage">
         <div class="section-header" data-aos="fade-up">
             <h2>THE PPG STUCCO ADVANTAGE</h2>
-            <p>Adding stucco to walls, especially in tropical climates, offers key benefits due to its unique properties.</p>
+            <p>Engineered to conquer the Caribbean elements. Unmatched durability meets architectural beauty.</p>
         </div>
         
         <div class="features-grid">
@@ -59,15 +78,15 @@
     <section class="products" id="products">
         <div class="section-header" data-aos="fade-up">
             <h2>OUR EXPERTISE</h2>
-            <p>Exclusive distributors for PPG Pittsburgh Paints Stucco in the Caribbean.</p>
+            <p>Delivering the Caribbean's premier stucco solutions, alongside a growing catalog of professional-grade construction materials.</p>
         </div>
         
         <div class="product-cards-container">
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openFactsheet()">
                 <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop');"></div>
                 <div class="card-content">
-                    <h3>PPG RUSTIC TEXTURE</h3>
-                    <p>Interior & Exterior finishing in high relief. Features high weather resistance and high filling power.</p>
+                    <h3>PPG STUCCO</h3>
+                    <p>Click here to view product factsheet & specifications.</p>
                 </div>
             </div>
             <div class="product-card" data-aos="fade-up" data-aos-delay="200">
@@ -77,12 +96,6 @@
                     <p>A wider range of trusted construction materials coming soon.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="about-banner" data-aos="fade-in" data-aos-duration="1500">
-        <div class="banner-content">
-            <h3>"StoneLine Caribbean was founded on the principle of ethical and moral distribution, where customer satisfaction and lasting quality meet a price no one can match."</h3>
         </div>
     </section>
 
@@ -102,7 +115,6 @@
 
     <section class="contact-section" id="contact">
         <div class="contact-container">
-            
             <div class="contact-info" data-aos="fade-right">
                 <h2>READY TO TRANSFORM YOUR PROJECT?</h2>
                 <p>Get in touch with us to discuss your PPG Stucco and construction material needs.</p>
@@ -114,7 +126,7 @@
 
                 <p class="connect-text">Tap to Connect Instantly:</p>
                 <div class="smart-links">
-                    <a href="mailto:sales@stonelinecaribbean.com?subject=Inquiry%20about%20PPG%20Stucco&body=Hi%20Stoneline%20Team,%0A%0AI%20would%20like%20to%20request%20more%20information%20and%20a%20quote%20for%20PPG%20Stucco.%0A%0AThank%20you!" class="icon-btn email-btn" title="Email Us"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:sales@stonelinecaribbean.com?subject=Inquiry%20about%20PPG%20Stucco" class="icon-btn email-btn" title="Email Us"><i class="fas fa-envelope"></i></a>
                     <a href="https://wa.me/18687162129?text=Hi%20Stoneline%20Caribbean,%20I%20am%20interested%20in%20getting%20more%20information%20on%20PPG%20Stucco!" target="_blank" class="icon-btn wa-btn" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
@@ -123,11 +135,10 @@
                 <form action="mailto:sales@stonelinecaribbean.com" method="GET" enctype="text/plain" class="contact-form">
                     <input type="email" name="Email" placeholder="Your Email Address" required>
                     <input type="tel" name="Phone" placeholder="Your Phone Number" required>
-                    <textarea name="Message" rows="5" placeholder="How can we help you? (e.g., Request a quote for PPG Stucco)" required></textarea>
+                    <textarea name="Message" rows="5" placeholder="How can we help you?" required></textarea>
                     <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
                 </form>
             </div>
-
         </div>
     </section>
 
@@ -146,9 +157,32 @@
         </div>
     </footer>
 
+    <div id="factsheetModal" class="modal">
+        <span class="close-modal" onclick="closeFactsheet()">&times;</span>
+        <img class="modal-content" id="factsheetImg" src="factsheet.jpg" alt="PPG Stucco Factsheet">
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true });
+
+        // JavaScript for the Factsheet Pop-up
+        const modal = document.getElementById("factsheetModal");
+        
+        function openFactsheet() {
+            modal.style.display = "flex";
+        }
+        
+        function closeFactsheet() {
+            modal.style.display = "none";
+        }
+        
+        // Close modal if user clicks outside the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeFactsheet();
+            }
+        }
     </script>
 </body>
 </html>
