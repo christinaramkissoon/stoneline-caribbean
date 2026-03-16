@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Sticky Navigation - White Version */
+/* Sticky Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -42,7 +42,7 @@ nav {
 .logo-text {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
     letter-spacing: 2px;
 }
 
@@ -62,7 +62,15 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: #C49A2D;
+    cursor: pointer;
 }
 
 /* Hero Section with Video */
@@ -130,7 +138,7 @@ nav {
 }
 
 .btn-primary {
-    background-color: #C49A2D; /* TRUE STONELINE GOLD */
+    background-color: #C49A2D; 
     color: #ffffff;
 }
 
@@ -180,7 +188,7 @@ nav {
 }
 
 .about-text h2 {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
     font-size: 2.5rem;
     margin-bottom: 25px;
 }
@@ -225,7 +233,7 @@ nav {
 .feature-card {
     padding: 30px;
     background-color: #ffffff;
-    border-top: 4px solid #C49A2D; /* TRUE STONELINE GOLD */
+    border-top: 4px solid #C49A2D; 
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
@@ -338,7 +346,7 @@ nav {
 }
 
 .close-modal:hover {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
 }
 
 /* Testimonials Section */
@@ -380,7 +388,7 @@ nav {
 }
 
 .testimonial-text h4 {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
     font-size: 1rem;
 }
 
@@ -423,7 +431,7 @@ nav {
 }
 
 .contact-details i {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
     font-size: 1.3rem;
 }
 
@@ -457,7 +465,7 @@ nav {
 }
 
 .email-btn {
-    background-color: #C49A2D; /* TRUE STONELINE GOLD */
+    background-color: #C49A2D; 
 }
 
 .wa-btn {
@@ -486,7 +494,7 @@ nav {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #C49A2D; /* TRUE STONELINE GOLD */
+    border-color: #C49A2D; 
 }
 
 /* Footer Bottom Strip */
@@ -507,7 +515,7 @@ nav {
 .footer-logo {
     font-weight: 700;
     letter-spacing: 2px;
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
 }
 
 .social-links {
@@ -522,7 +530,7 @@ nav {
 }
 
 .social-links a:hover {
-    color: #C49A2D; /* TRUE STONELINE GOLD */
+    color: #C49A2D; 
 }
 
 .footer-contact-info-bottom {
@@ -540,9 +548,29 @@ nav {
     nav {
         padding: 15px;
     }
-    .nav-links {
-        display: none;
+    
+    .hamburger {
+        display: block; /* Shows icon on mobile */
     }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: none; /* Hidden by default */
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Opens when hamburger is clicked */
+    }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
