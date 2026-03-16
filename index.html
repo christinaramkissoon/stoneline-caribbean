@@ -32,13 +32,13 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
-            <h1>FROM COASTLINE<br>TO CONCRETE, WE COVER IT ALL</h1>
-            <p>Born in Trinidad and proudly connected across the Caribbean.</p>
-            <p>We are the exclusive distributors of PPG Stucco, delivering not just products, but confidence.</p>
+            <h1>FROM COASTLINE TO<br>CONCRETE, WE COVER IT ALL</h1>
+            <p>Born in Trinidad and proudly connected across the Caribbean. We are the exclusive distributors of PPG Stucco, delivering not just products, but confidence.</p>
             <a href="#products" class="btn-primary">Explore Products</a>
             <a href="#contact" class="btn-secondary">Contact Us</a>
         </div>
     </header>
+
     <section class="about-us" id="about-us">
         <div class="about-container">
             <div class="about-text" data-aos="fade-right">
@@ -153,7 +153,7 @@
             <div class="social-links">
                 <a href="https://www.instagram.com/stonelinecaribbean" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@stonelinecaribbean" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.facebook.com/share/1DnbwPRYup/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             </div>
         </div>
         <div class="footer-contact-info-bottom">
@@ -165,6 +165,7 @@
     <div id="factsheetModal" class="modal">
         <span class="close-modal" onclick="closeFactsheet()">&times;</span>
         <img class="modal-content" id="factsheetImg" src="factsheet.jpg" alt="PPG Stucco Factsheet">
+        <a href="https://www.ppgpaints.com/color/paint-colors" target="_blank" class="btn-primary" style="margin-top: 25px;">View All Colours</a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -179,18 +180,12 @@
 
         // Smart Form Logic
         function sendSmartEmail(event) {
-            event.preventDefault(); // Stops the page from refreshing
-            
-            // Get what the user typed
+            event.preventDefault(); 
             const email = document.getElementById('formEmail').value;
             const phone = document.getElementById('formPhone').value;
             const message = document.getElementById('formMessage').value;
-            
-            // Format it for the email app
             const subject = encodeURIComponent("Website Inquiry from " + email);
             const body = encodeURIComponent("Phone Number: " + phone + "\n\nMessage:\n" + message);
-            
-            // Open the user's email client with everything filled in
             window.location.href = "mailto:sales@stonelinecaribbean.com?subject=" + subject + "&body=" + body;
         }
     </script>
