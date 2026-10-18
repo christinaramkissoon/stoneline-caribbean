@@ -92,14 +92,17 @@
         </div>
         
         <div class="product-cards-container">
-            <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openFactsheet()">
+            <!-- PPG & ALESSI STUCCO CARD -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openFactsheet('factsheet.jpg', true)">
                 <div class="card-bg" style="background-image: url('bkt_new.png');"></div>
                 <div class="card-content">
                     <h3>PPG & ALESSI STUCCO</h3>
                     <p>Click here to view product factsheet & specifications.</p>
                 </div>
             </div>
-            <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            
+            <!-- INDUSTRIAL DUCT TAPE CARD -->
+            <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openFactsheet('tape_factsheet.jpg', false)">
                 <div class="card-bg" style="background-image: url('tape_new.png');"></div>
                 <div class="card-content">
                     <h3>INDUSTRIAL DUCT TAPE</h3>
@@ -167,10 +170,11 @@
         </div>
     </footer>
 
+    <!-- Dynamic Factsheet Modal -->
     <div id="factsheetModal" class="modal">
         <span class="close-modal" onclick="closeFactsheet()">&times;</span>
-        <img class="modal-content" id="factsheetImg" src="factsheet.jpg" alt="PPG & Alessi Stucco Factsheet">
-        <a href="https://www.ppgpaints.com/ppg-color-families/see-all-colors" target="_blank" class="btn-primary" style="margin-top: 25px;">View All Colours</a>
+        <img class="modal-content" id="factsheetImg" src="factsheet.jpg" alt="Product Factsheet">
+        <a id="colorsBtn" href="https://www.ppgpaints.com/ppg-color-families/see-all-colors" target="_blank" class="btn-primary" style="margin-top: 25px;">View All Colours</a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -192,9 +196,21 @@
             });
         });
 
-        // Modal Logic
+        // Dynamic Modal Logic
         const modal = document.getElementById("factsheetModal");
-        function openFactsheet() { modal.style.display = "flex"; }
+        const factsheetImg = document.getElementById("factsheetImg");
+        const colorsBtn = document.getElementById("colorsBtn");
+
+        function openFactsheet(imageSrc, showColors) { 
+            factsheetImg.src = imageSrc;
+            if (showColors) {
+                colorsBtn.style.display = "inline-block";
+            } else {
+                colorsBtn.style.display = "none";
+            }
+            modal.style.display = "flex"; 
+        }
+
         function closeFactsheet() { modal.style.display = "none"; }
         window.onclick = function(event) { if (event.target == modal) { closeFactsheet(); } }
 
